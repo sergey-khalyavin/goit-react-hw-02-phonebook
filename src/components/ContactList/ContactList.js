@@ -15,12 +15,16 @@ const ContactList = ({ contacts, onRemoveContact }) => (
   </ul>
 );
 
+ContactList.defaultProps = {
+  contacts: '',
+};
+
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
     }),
   ),
 };

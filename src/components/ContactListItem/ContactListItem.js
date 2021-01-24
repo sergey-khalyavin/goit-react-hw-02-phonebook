@@ -6,8 +6,9 @@ import styles from './ContactListItem.module.css';
 const ContactListItem = ({ name, id, number, onRemove }) => {
   return (
     <li key={id} className={styles.item}>
-      <p>{name}:</p>
-      <p>{number}</p>
+      <p>
+        {name}: {number}
+      </p>
       <section className={styles.section__btn}>
         <button type="button" onClick={onRemove}>
           Delete
@@ -19,7 +20,7 @@ const ContactListItem = ({ name, id, number, onRemove }) => {
 
 ContactListItem.propTypes = {
   name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
   onRemove: PropTypes.func.isRequired,
 };
 
