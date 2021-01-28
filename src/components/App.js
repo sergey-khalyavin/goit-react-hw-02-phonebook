@@ -76,16 +76,19 @@ export default class App extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
     const visibleContacts = this.getVisibleContacts();
     return (
       <div className={styles.box}>
         <h1>Phonebook</h1>
         <ContactForm onAddContact={this.addContact} />
 
-        <h2>Contacts</h2>
-        {visibleContacts.length > 0 && (
-          <Filter value={filter} onChangeFilter={this.changeFilter} />
+        {contacts.length > 0 && (
+          <>
+            <h2>Contacts</h2>
+
+            <Filter value={filter} onChangeFilter={this.changeFilter} />
+          </>
         )}
 
         <ContactList
